@@ -10,19 +10,19 @@ describe("Check Headline News", () => {
     baserul.visitnewspage();
   });
 
-  it("should display the correct headline news 1", () => {
+  it("should display the correct headline news title and image 1", () => {
     headlinenews.checkheadlinenews1();
   });
 
-  it("should display the correct headline news 2", ()=>{
+  it("should display the correct headline news title and image 2", ()=>{
     headlinenews.checkheadlinenews2();
   });
 
-  it.only("should display the correct headline news 3", ()=>{
+  it("should display the correct headline news title and image 3", ()=>{
     headlinenews.checkheadlinenews3();
   });
 
-  it.only("should display the correct headline news 4", ()=>{
+  it("should display the correct headline news title and image 4", ()=>{
     headlinenews.checkheadlinenews4();
   });
 
