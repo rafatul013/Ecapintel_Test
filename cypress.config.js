@@ -19,6 +19,8 @@ module.exports = defineConfig({
         'cypress/e2e/BaseUrl/BaseUrlTest.cy.js',
         //Check header
         'cypress/e2e/Headerfooter/header.cy.js',
+        // Check Footer
+        'cypress/e2e/Footer/footer.cy.js',
         //Check Sign In
         'cypress/e2e/Signin/signin.cy.js',
         //Check Sign Up
