@@ -27,6 +27,8 @@ module.exports = defineConfig({
         'cypress/e2e/Signup/signup.cy.js',
         //Visit Home Page
         'cypress/e2e/Homepage/homepage.cy.js',
+        //Visit SNF Page
+        'cypress/e2e/SNF360/snf360.cy.js',
         //Visit News Page
         'cypress/e2e/News/headlinenews.cy.js'
         

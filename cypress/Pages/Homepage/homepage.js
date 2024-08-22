@@ -29,15 +29,16 @@ class Homepage {
         cy.get('.title').eq(4).should('have.text', 'News').should('be.visible');
     }
     validateFlipCardBackContent() {
-        cy.get('.flip-card').eq(0).trigger('mouseover');
+        //cy.get('.flip-card').eq(0).trigger('mouseover');
+        cy.get('.flip-card-inner').eq(0).invoke('css', 'transform', 'rotateY(180deg)');
         cy.get('.flip-card-back .info').eq(0).should('have.text', 'Next Generation Analytics for Post-Acute Care StakeholdersSNF360 >>');
-        cy.get('.flip-card').eq(1).trigger('mouseover');
+        cy.get('.flip-card-inner').eq(1).invoke('css', 'transform', 'rotateY(180deg)');
         cy.get('.flip-card-back .info').eq(1).should('have.text', 'Advanced modeling applications that provide a competitive advantageTools & Resources >>');
-        cy.get('.flip-card').eq(2).trigger('mouseover');
+        cy.get('.flip-card-inner').eq(2).invoke('css', 'transform', 'rotateY(180deg)');
         cy.get('.flip-card-back .info').eq(2).should('have.text', 'Micro-education focused on the PAC marketECAP Academy >>');
-        cy.get('.flip-card').eq(3).trigger('mouseover');
+        cy.get('.flip-card-inner').eq(3).invoke('css', 'transform', 'rotateY(180deg)');
         cy.get('.flip-card-back .info').eq(3).should('have.text', 'The industry voice for policy discussionCommunity >>');
-        cy.get('.flip-card').eq(4).trigger('mouseover');
+        cy.get('.flip-card-inner').eq(4).invoke('css', 'transform', 'rotateY(180deg)');
         cy.get('.flip-card-back .info').eq(4).should('have.text', 'Stories & Features curated by StateNews >>');
     }
     checkFlipCardNavigationLinks() {
