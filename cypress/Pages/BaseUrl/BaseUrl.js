@@ -12,5 +12,9 @@ class  BaseUrl {
         cy.visit("https://qa.ecapintel.com/snf360");
         cy.wait(1000);
     }
+    visittoolsresourcepage(){
+        cy.visit("https://qa.ecapintel.com/resources");
+        cy.wait(1000);
+    }
  }
  export default BaseUrl;

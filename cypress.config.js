@@ -29,9 +29,10 @@ module.exports = defineConfig({
         'cypress/e2e/Homepage/homepage.cy.js',
         //Visit SNF Page
         'cypress/e2e/SNF360/snf360.cy.js',
+        //Visit Tools and Resource Page
+        'cypress/e2e/ToolsResource/tools_resource.cy.js',
         //Visit News Page
         'cypress/e2e/News/headlinenews.cy.js'
-        
       ]
       return config;
     },
