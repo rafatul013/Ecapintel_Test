@@ -31,8 +31,12 @@ module.exports = defineConfig({
         'cypress/e2e/SNF360/snf360.cy.js',
         //Visit Tools and Resource Page
         'cypress/e2e/ToolsResource/tools_resource.cy.js',
-        //Visit News Page
-        'cypress/e2e/News/headlinenews.cy.js'
+        //Check Headline News
+        'cypress/e2e/News/newspage.cy.js',
+        //Check Headline News
+        'cypress/e2e/News/headlinenews.cy.js',
+        //Check Latest News
+        'cypress/e2e/News/latestnews.cy.js'
       ]
       return config;
     },
