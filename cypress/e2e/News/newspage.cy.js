@@ -8,7 +8,7 @@ describe("Check All Content in News Page", () => {
     const visitbaseurl = new BaseUrl();
     const headlinenews = new headlineNews();
     const latestnews = new LatestNews();
-   // const trendingnews = TrendingNews();
+    const trendingnews = new TrendingNews();
     const categorynews = new CategoryNews();
 
     beforeEach(() => {
@@ -59,6 +59,53 @@ describe("Check All Content in News Page", () => {
         })
         it("Validate the Fourth Latest News Item on the News Section", () => {
             latestnews.checklatestnews4();
+        })
+    })
+
+    describe("Check Trending News Section",()=>{
+        it("Ensure the Trending News section is available", ()=>{
+            trendingnews.checkapptrendingnewssection();
+        })
+        it("Ensure the Trending News section title is available", ()=>{
+            trendingnews.checkapptrendingnewstitle();
+        })
+        it("Ensure the view all button working and clickable", ()=>{
+            trendingnews.checkviewallbutton();
+        })
+        it("Check the Number of Trending News content in Trending news section", ()=>{
+            trendingnews.checknumberofcontent();
+        })
+        it("should validate the trending news 1 title, image, and links", ()=>{
+            trendingnews.checktrendingnews1();
+        })
+        it("should validate the trending news 2 title, image, and links", ()=>{
+            trendingnews.checktrendingnews2();
+        })
+        it("should validate the trending news 3 title, image, and links", ()=>{
+            trendingnews.checktrendingnews3();
+        })
+    })
+    describe("Check Recommended Section News",()=>{
+        it("Ensure the Recommended News section is available", ()=>{
+            trendingnews.checkrecommendedNewssection()
+        })
+        it("Ensure the Recommended News section title is available", ()=>{
+            trendingnews.checkapptrendingnewstitle();
+        })
+        it("Should validate the Recommended news 1 title and links", ()=>{
+            trendingnews.checkrecommendednews1();
+        })
+        it("Should validate the Recommended news 2 title and links", ()=>{
+            trendingnews.checkrecommendednews2();
+        })
+        it("Should validate the Recommended news 3 title and links", ()=>{
+            trendingnews.checkrecommendednews3();
+        })
+        it("Should validate the Recommended news 4 title and links", ()=>{
+            trendingnews.checkrecommendednews4();
+        })
+        it("Should validate the Recommended news 5 title and links", ()=>{
+            trendingnews.checkrecommendednews5();
         })
     })
 
