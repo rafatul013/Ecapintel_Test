@@ -16,8 +16,9 @@ class Footer {
         cy.go('back');
 
         cy.get('.footer-links-item').eq(2).find('a').should('have.attr', 'href', '/snf360').click({ force: true });
+        cy.wait(1000)
         cy.url().should('include', '/snf360');
-        cy.go('back');
+        cy.go('back'); 
     }
     verifyNewsletterSubscriptionInput() {
         cy.get('.newsletter-input').should('be.visible').and('have.attr', 'placeholder', 'Your Email');

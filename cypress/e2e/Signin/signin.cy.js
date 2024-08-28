@@ -27,10 +27,21 @@ describe("Check The Login Functionality", ()=>{
         signin.clicksigninbutton();
         signin.checkerrormessageinvalidemail();
     })
-    it.only("Check user can login with valid credential", () => {
+    it.skip("Check user can login with valid credential through fixture", () => {
         visitbaseurl.visitpage();
         signin.clicksigninbutton();
-        signin.loginwithvalidcred();
+        signin.loginwithvalidcredfixture();
+    })
+    it.only("Check user can login with valid credential through env", () => {
+        visitbaseurl.visitpage();
+        signin.clicksigninbutton();
+        signin.loginwithvalidcredenv();
+    })
+    it("Check user can login and Logout", () => {
+        visitbaseurl.visitpage();
+        signin.clicksigninbutton();
+        signin.loginwithvalidcredfixture();
+        signin.userlogout();
     })
     
 })
