@@ -27,7 +27,7 @@ describe("Check The Login Functionality", ()=>{
         signin.clicksigninbutton();
         signin.checkerrormessageinvalidemail();
     })
-    it("Check user can login with valid credential", () => {
+    it.only("Check user can login with valid credential", () => {
         visitbaseurl.visitpage();
         signin.clicksigninbutton();
         signin.loginwithvalidcred();

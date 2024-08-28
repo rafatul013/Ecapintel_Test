@@ -1,4 +1,6 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
+const dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
@@ -8,7 +10,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
-    reportPageTitle: 'Z.PAX Automation Test Report',
+    reportPageTitle: 'Ecapintel Automation Test Report',
   },
   e2e: {
     watchForFileChanges: false,
@@ -31,13 +33,21 @@ module.exports = defineConfig({
         'cypress/e2e/SNF360/snf360.cy.js',
         //Visit Tools and Resource Page
         'cypress/e2e/ToolsResource/tools_resource.cy.js',
-        //Check Headline News
+        //Check News Page
         'cypress/e2e/News/newspage.cy.js',
+        //Check Academy Page
+        'cypress/e2e/Academy/Academypage.cy.js'
         //Check Headline News
-        'cypress/e2e/News/headlinenews.cy.js',
+        // 'cypress/e2e/News/headlinenews.cy.js',
         //Check Latest News
-        'cypress/e2e/News/latestnews.cy.js'
+        // 'cypress/e2e/News/latestnews.cy.js'
       ]
+      // Override default values with .env file values
+      config.env = {
+        ...config.env,
+        email: process.env.EMAIL,
+        password: process.env.PASSWORD,
+      };
       return config;
     },
   },

@@ -39,6 +39,23 @@ describe("Check All Content in News Page", () => {
             headlinenews.checkheadlinenews4();
         });
     });
+    describe("Check Search and Filter on News Page", () => {
+        it("Should type in the search input and submit the form", () => {
+            headlinenews.checksearchbox();
+        })
+        it("Validate that a proper message or behavior occurs when search is empty", () => {
+            headlinenews.checksearchwithoutinput();
+        })
+        it('should default to "All States" when the page loads', () => {
+            headlinenews.checkdefaultstate();
+        })
+        it("should have all states listed in the dropdown and select a specific state", () => {
+            headlinenews.checkfilter();
+        })
+        it("Select the option through api response", () => {
+            headlinenews.checkfilterwithapiresponse();
+        })
+    })
 
     describe("Check Latest News", () => {
 
@@ -62,49 +79,49 @@ describe("Check All Content in News Page", () => {
         })
     })
 
-    describe("Check Trending News Section",()=>{
-        it("Ensure the Trending News section is available", ()=>{
+    describe("Check Trending News Section", () => {
+        it("Ensure the Trending News section is available", () => {
             trendingnews.checkapptrendingnewssection();
         })
-        it("Ensure the Trending News section title is available", ()=>{
+        it("Ensure the Trending News section title is available", () => {
             trendingnews.checkapptrendingnewstitle();
         })
-        it("Ensure the view all button working and clickable", ()=>{
+        it("Ensure the view all button working and clickable", () => {
             trendingnews.checkviewallbutton();
         })
-        it("Check the Number of Trending News content in Trending news section", ()=>{
+        it("Check the Number of Trending News content in Trending news section", () => {
             trendingnews.checknumberofcontent();
         })
-        it("should validate the trending news 1 title, image, and links", ()=>{
+        it("should validate the trending news 1 title, image, and links", () => {
             trendingnews.checktrendingnews1();
         })
-        it("should validate the trending news 2 title, image, and links", ()=>{
+        it("should validate the trending news 2 title, image, and links", () => {
             trendingnews.checktrendingnews2();
         })
-        it("should validate the trending news 3 title, image, and links", ()=>{
+        it("should validate the trending news 3 title, image, and links", () => {
             trendingnews.checktrendingnews3();
         })
     })
-    describe("Check Recommended Section News",()=>{
-        it("Ensure the Recommended News section is available", ()=>{
+    describe("Check Recommended Section News", () => {
+        it("Ensure the Recommended News section is available", () => {
             trendingnews.checkrecommendedNewssection()
         })
-        it("Ensure the Recommended News section title is available", ()=>{
+        it("Ensure the Recommended News section title is available", () => {
             trendingnews.checkapptrendingnewstitle();
         })
-        it("Should validate the Recommended news 1 title and links", ()=>{
+        it("Should validate the Recommended news 1 title and links", () => {
             trendingnews.checkrecommendednews1();
         })
-        it("Should validate the Recommended news 2 title and links", ()=>{
+        it("Should validate the Recommended news 2 title and links", () => {
             trendingnews.checkrecommendednews2();
         })
-        it("Should validate the Recommended news 3 title and links", ()=>{
+        it("Should validate the Recommended news 3 title and links", () => {
             trendingnews.checkrecommendednews3();
         })
-        it("Should validate the Recommended news 4 title and links", ()=>{
+        it("Should validate the Recommended news 4 title and links", () => {
             trendingnews.checkrecommendednews4();
         })
-        it("Should validate the Recommended news 5 title and links", ()=>{
+        it("Should validate the Recommended news 5 title and links", () => {
             trendingnews.checkrecommendednews5();
         })
     })

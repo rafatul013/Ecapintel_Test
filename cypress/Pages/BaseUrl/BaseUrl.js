@@ -14,7 +14,11 @@ class  BaseUrl {
     }
     visittoolsresourcepage(){
         cy.visit("https://qa.ecapintel.com/resources");
-        cy.wait(1000);
+       // cy.wait(1000);
+    }
+    visitacademypage(){
+        cy.visit("https://qa.ecapintel.com/academy");
+       // cy.wait(1000);
     }
  }
  export default BaseUrl;

@@ -24,7 +24,7 @@ describe("Test SNF360 Page", () => {
             snf.verifyheroimage();
         })
     })
-    describe.only('App Sections Testing', () => {
+    describe('App Sections Testing', () => {
         it("Should verify the Current Market Assessment section",()=>{
             snf.veifyCurrentMarketAssessment();
         })
@@ -34,7 +34,7 @@ describe("Test SNF360 Page", () => {
         it("Should verify the Provider Insights section",()=>{
             snf.verifyProviderInsights();
         })
-        it.only("should verify the National Market Statistics & Trends section",()=>{
+        it("should verify the National Market Statistics & Trends section",()=>{
             snf.verifyNationalMarketStatistics();
         })
     })

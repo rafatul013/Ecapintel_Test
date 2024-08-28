@@ -20,9 +20,14 @@ class Signin{
         cy.contains(" Please enter a valid email address. ").should('be.visible');
     }
     loginwithvalidcred(){
-        cy.get('[placeholder="Email address"]').should('be.visible').should('exist').type("test@gmail.com");
-        cy.get('[placeholder="Password"]').should('be.visible').should('exist').type("123456");
+        const email = Cypress.env('email');
+        const password = Cypress.env('password');
+
+        cy.get('[placeholder="Email address"]').should('be.visible').should('exist').type(email);
+        cy.get('[placeholder="Password"]').should('be.visible').should('exist').type(password);
         cy.get('.button-spinner-container').should('be.enabled').click();
+
+        cy.get('#userDropdown').should('be.visible').click();
     }
 
 }

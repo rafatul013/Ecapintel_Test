@@ -7,6 +7,47 @@ class headlineNews {
     cy.get('.news-card').should('have.length', 4);
   }
 
+  checksearchbox() {
+    cy.get('input[formcontrolname="search"]').type('Nursing Homes').should('have.value', 'Nursing Homes'); // Validate the input value
+    cy.get('button.search-btn').should('be.exist').click();
+  }
+  checksearchwithoutinput() {
+    cy.get('input[formcontrolname="search"]').type('vvvvvvvvvvvvvvv');
+    cy.get('button.search-btn').should('be.exist').click();
+    cy.contains("No Search Results Found").should('be.visible');
+  }
+  checkfilter() {
+    //check available filter
+    cy.get('select.filter-btn').find('option').should('have.length', 51)
+
+    // Verify the dropdown includes specific states
+    cy.get('select.filter-btn')
+      .should('contain', 'All States')
+      .and('contain', 'California')
+      .and('contain', 'New York')
+      .and('contain', 'Texas')
+      .and('contain', 'Florida');
+
+    // Select a state from the dropdown
+    cy.get('select.filter-btn').select('California'); // Selecting 'California'
+
+    // Validate that the correct state is selected
+    cy.get('select.filter-btn').should('have.value', '5: Object');
+  }
+
+  checkdefaultstate(){
+    cy.get('select.filter-btn').should('have.value', '0: Object');
+  }
+  checkfilterwithapiresponse() {
+    cy.request("https://beemumqa1a.execute-api.us-east-1.amazonaws.com/Prod/api/News/states")
+    .then((response) => {
+      expect(response.status).to.eq(200);
+      const state5 = response.body[4].name;
+      cy.get('select.filter-btn').select(state5); // Selecting 'California'
+     // cy.get('select.filter-btn').should('have.value', '5: Object');
+    });
+  }
+  
   checkheadlinenews1() {
     // Make an API call to fetch the headline news data
     cy.request("https://beemumqa1a.execute-api.us-east-1.amazonaws.com/Prod/api/News/news?search=&filter=all&page=1")

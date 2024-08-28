@@ -30,5 +30,23 @@ describe("Check Headline News", () => {
   it("should display the correct headline news title and image 4", () => {
     headlinenews.checkheadlinenews4();
   });
+  describe.only("Check Search and Filter on News Page", () => {
+    it("Should type in the search input and submit the form",()=>{
+      headlinenews.checksearchbox();
+    })
+    it("Validate that a proper message or behavior occurs when search is empty",()=>{
+      headlinenews.checksearchwithoutinput();
+    })
+    it('should default to "All States" when the page loads', () => {
+      headlinenews.checkdefaultstate();
+    })
+    it("should have all states listed in the dropdown and select a specific state",()=>{
+      headlinenews.checkfilter();
+    })
+    it("Select the option through api response",()=>{
+      headlinenews.checkfilterwithapiresponse();
+    })
+  })
+
 
 });
